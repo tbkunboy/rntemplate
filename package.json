@@ -1,0 +1,43 @@
+{
+  "name": "rntemplate",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "cd android &&./gradlew clean && cd .. && npx react-native run-android ",
+    "ios": "cd ios && xcodebuild clean && cd .. && npx react-native run-ios",
+    "yarn-ios": "yarn && yarn pod",
+    "android-release": "npx react-native run-android --variant=release",
+    "start": "npx react-native start --reset-cache",
+    "link": "npx react-native link",
+    "apk": "cd android &&./gradlew clean && ./gradlew assembleRelease && cd ..",
+    "aab": "cd android &&./gradlew clean && ./gradlew bundleRelease && cd ..",
+    "pod": "cd ios && pod install && cd ..",
+    "format": "prettier --write **/*.{ts,tsx,js,json,md}",
+    "check-code": "prettier --check **/*.{ts,tsx,js,json,md}",
+    "test": "jest",
+    "lint": "eslint index.js app --fix --ext .js,.ts,.tsx"
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/native": "^5.9.0",
+    "react": "16.13.1",
+    "react-native": "0.63.4",
+    "react-native-gesture-handler": "^1.9.0",
+    "react-native-reanimated": "^1.13.2",
+    "react-native-safe-area-context": "^3.1.9",
+    "react-native-screens": "^2.16.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.10",
+    "@babel/runtime": "7.12.5",
+    "@react-native-community/eslint-config": "1.1.0",
+    "babel-jest": "25.5.1",
+    "eslint": "6.8.0",
+    "jest": "25.5.4",
+    "metro-react-native-babel-preset": "0.59.0",
+    "react-test-renderer": "16.13.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
